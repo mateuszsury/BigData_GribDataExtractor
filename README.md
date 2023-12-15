@@ -53,3 +53,7 @@ This universal script is designed to handle GRIB files from various sources, pro
 
 - Ensure proper dependencies are installed before running each script.
 - Adjust parameters and paths according to your file locations.
+
+## Example result
+![2 metre temperature_plot](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/cd14c966-7c5b-48df-aaad-9bb083b9b9e7)
+
