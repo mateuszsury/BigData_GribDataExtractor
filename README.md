@@ -2,9 +2,55 @@
 
 ## Overview
 
-This repository contains two scripts for processing GRIB files, ecpecially designed for ERA5 data, but works with other data also. ERA5 is a global atmospheric reanalysis dataset produced by the European Centre for Medium-Range Weather Forecasts (ECMWF). The scripts are tailored for extracting and analyzing meteorological variables from GRIB files.
+This repository contains three scripts for processing GRIB files, ecpecially designed for ERA5 data, but works with other data also. ERA5 is a global atmospheric reanalysis dataset produced by the European Centre for Medium-Range Weather Forecasts (ECMWF). The scripts are tailored for extracting and analyzing meteorological variables from GRIB files.
 
-### Script 1: ERA5GribDataExtractor_spark_optimized
+### Script 1: GRIBExtractor_GUI_Win
+
+#### Purpose
+
+This newest, most optimazed script with GUI that works on Windows. It is designed for all GRIB files from all datasets that contain data one year data for each day of this year (example: 2 metre temperature for each day of 2022). The script utilizes Numpy and Pandas to efficiently calculate the monthly average, minimum, and maximum values for each variable across all files in a given location and Matplotlib to generate graphs of changes in these values over the years. The program has been developed in two versions, one is a python script and the other is a standalone application that does not require a special environment.
+
+#### Prerequisites (python script version)
+
+- Anaconda
+- PyGrib
+- Numpy
+- Pandas
+- Matplotlib
+- Windows
+
+#### Prerequisites (stand-alone version)
+
+- Windows
+
+
+#### Standalone version relase
+
+Because standalone version file is too big for Github it could be downloaded from link below.
+Link: https://www.mediafire.com/file/7o5vj4i0llfk1j1/gui.7z/file
+
+#### Usage
+
+1. Run program.
+2. Specifying the location of GRIB files.
+![Zrzut ekranu 2023-12-28 022430](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/181a70d6-1da8-4c0e-a609-10fd512d471c)
+
+3. The script will preprocess the files, it will take a while (execution time for processing 83 files (28GB) is approximately 2.5 hours)
+  3.1. A CSV file will be generated for each file containing the average value of each variable for each month.
+![Zrzut ekranu 2023-12-28 022605](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/93910d27-ce85-461b-82a1-620371447711)
+
+4. Once processing is complete, a CSV file will be generated containing the average values of all variables in all processed years.
+![Zrzut ekranu 2023-12-28 022748](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/1d6b6183-b0df-405b-aed8-6f190c2604ac)
+
+5. Select which variables you want to generate graphs of.
+![Zrzut ekranu 2023-12-28 023401](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/09b8180e-8427-4b53-b292-22e5b0be610f)
+
+6. Results
+![2 metre temperature_trends](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/7927d869-67a3-45f2-89fc-ae5a4c005891)
+
+
+
+### Script 2: ERA5GribDataExtractor_spark_optimized
 
 #### Purpose
 
@@ -19,6 +65,7 @@ This script is optimized for ERA5 GRIB files that contain data for a single year
 - Apache Spark
 - GRIB files with the specified structure
 - PyGrib
+- Linux
 
 #### Usage
 
@@ -27,7 +74,7 @@ This script is optimized for ERA5 GRIB files that contain data for a single year
 3. The script will preprocess the files, perform Spark-based calculations, and generate charts.
 4. Execution time for processing 83 files (28GB) is approximately 2.5 hours.
 
-### Script 2: GribDataExtractor_slow
+### Script 3: GribDataExtractor_slow
 
 #### Purpose
 
@@ -37,6 +84,7 @@ This universal script is designed to handle GRIB files from various sources, pro
 
 - Python environment
 - PyGrib
+- Linux
 
 #### Usage
 
