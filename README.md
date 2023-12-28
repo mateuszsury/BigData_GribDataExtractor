@@ -33,19 +33,24 @@ Link: https://www.mediafire.com/file/7o5vj4i0llfk1j1/gui.7z/file
 
 1. Run program.
 2. Specifying the location of GRIB files.
+
 ![Zrzut ekranu 2023-12-28 022430](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/181a70d6-1da8-4c0e-a609-10fd512d471c)
 
 3. The script will preprocess the files, it will take a while (execution time for processing 83 files (28GB) is approximately 2.5 hours)
   3.1. A CSV file will be generated for each file containing the average value of each variable for each month.
+
 ![Zrzut ekranu 2023-12-28 022605](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/93910d27-ce85-461b-82a1-620371447711)
 
 4. Once processing is complete, a CSV file will be generated containing the average values of all variables in all processed years.
+
 ![Zrzut ekranu 2023-12-28 022748](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/1d6b6183-b0df-405b-aed8-6f190c2604ac)
 
 5. Select which variables you want to generate graphs of.
+
 ![Zrzut ekranu 2023-12-28 023401](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/09b8180e-8427-4b53-b292-22e5b0be610f)
 
 6. Results
+
 ![2 metre temperature_trends](https://github.com/mateuszsury/BigData_GribDataExtractor/assets/66475105/7927d869-67a3-45f2-89fc-ae5a4c005891)
 
 
