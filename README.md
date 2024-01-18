@@ -55,29 +55,27 @@ Link: https://www.mediafire.com/file/7o5vj4i0llfk1j1/gui.7z/file
 
 
 
-### Script 2: ERA5GribDataExtractor_spark_optimized
+### Script 2: Grib_data_extractor_using_spark&hadoop
 
 #### Purpose
 
-This script is optimized for ERA5 GRIB files that contain data for a single year, including at least one hourly data entry for each day. The GRIB file should also contain 26 specific variables. The script utilizes Apache Spark to efficiently calculate the monthly average, minimum, and maximum values for each variable across all files in a given location.
+This script is optimized for GRIB files uploaded to HDFS that contain data for a single year, including at least one hourly data entry for each day. The script utilizes Apache Spark to efficiently calculate the monthly average, minimum, and maximum values for each variable across all files in a given location. For security results are also beeing saved to HDFS.
 
-#### Variables
-
-'100 metre U wind component', '100 metre V wind component', '10 metre U wind component', '10 metre V wind component', '2 metre temperature', 'Evaporation', 'High vegetation cover', 'Ice temperature layer 1', 'Lake bottom temperature', 'Lake total depth', 'Low vegetation cover', 'Maximum temperature at 2 metres since previous post-processing', 'Minimum temperature at 2 metres since previous post-processing', 'Precipitation type', 'Skin temperature', 'Snow depth', 'Snow evaporation', 'Snowmelt', 'Soil temperature level 1', 'Surface pressure', 'Temperature of snow layer', 'Total cloud cover', 'Total precipitation', 'Type of high vegetation', 'Type of low vegetation', 'Volumetric soil water layer 1'
 
 #### Prerequisites
 
 - Apache Spark
-- GRIB files with the specified structure
+- Hadoop
+- GRIB files on the HDFS
 - PyGrib
 - Linux
 
 #### Usage
 
-1. Ensure Apache Spark is installed.
-2. Run the script with appropriate parameters, specifying the location of ERA5 GRIB files.
+1. Ensure Apache Spark and Hadoop is installed.
+2. Run the script with appropriate parameters, specifying the location of Hadoop bin folder, HDFS path and path to save results.
 3. The script will preprocess the files, perform Spark-based calculations, and generate charts.
-4. Execution time for processing 83 files (28GB) is approximately 2.5 hours.
+4. Execution time for processing 83 files (28GB) on 3 VM with 4 cores and 8G of RAM is approximately 40 minutes.
 
 ### Script 3: GribDataExtractor_slow
 
