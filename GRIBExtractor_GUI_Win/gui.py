@@ -3,7 +3,6 @@ from tkinter import filedialog
 from tkinter import messagebox
 import grib_methods
 import os
-import pyproj as pyproj
 
 class GribGUI:
     folder_path = None
