@@ -4,11 +4,23 @@
 
 This repository contains three scripts for processing GRIB files, especially designed for ERA5 data, but works with other data also. ERA5 is a global atmospheric reanalysis dataset produced by the European Centre for Medium-Range Weather Forecasts (ECMWF). The scripts are tailored for extracting and analyzing meteorological variables from GRIB files.
 
+The maintained desktop extractor and its synthetic GRIB regression are described
+in [ENVIRONMENTS.md](ENVIRONMENTS.md#desktop-regression-fixture). Historical
+Spark/Hadoop scripts and timing results have separate validation limits.
+
 ### Script 1: GRIBExtractor_GUI_Win
 
 #### Purpose
 
-This newest, most optimized script with GUI that works on Windows. It is designed for all GRIB files from all datasets that contain data one year data for each day of this year (example: 2 metre temperature for each day of 2022). The script utilizes Numpy and Pandas to efficiently calculate the monthly average, minimum, and maximum values for each variable across all files in a given location and Matplotlib to generate graphs of changes in these values over the years. The program has been developed in two versions, one is a python script and the other is a standalone application that does not require a special environment.
+The desktop GUI processes one calendar year per GRIB file. It groups messages by
+their actual valid month and variable, averages each spatial grid, and computes
+monthly means even when input is partial or unordered. Missing months remain
+NaN. The CSV summary reports the annual min/max/average of those monthly means,
+and Matplotlib plots their changes across years. Validate the source workflow
+with the synthetic regression described in ENVIRONMENTS.md; the standalone
+archive below is a historical build. Numerical methods and equal-message
+weighting are explicit in the source and are not universal climate statistics.
+
 
 #### Prerequisites (python script version)
 

@@ -17,3 +17,5 @@ jobs:
       - name: Run the documented host checks
         run: |
           python -m compileall -q .
+          python -m pip install -r requirements.txt
+          MPLBACKEND=Agg python -m unittest discover -s tests -v
