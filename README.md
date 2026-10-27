@@ -1,5 +1,13 @@
 # GRIB Data Processing
 
+## Przegląd działania
+
+Python tools for exploring GRIB weather data, monthly aggregation and historical big-data experiments.
+
+![GRIB Data Extractor — Current extraction workflow. Legacy Spark/Hadoop benchmarks keep their original historical scope.](docs/assets/presentation/overview.svg)
+
+Current extraction workflow. Legacy Spark/Hadoop benchmarks keep their original historical scope.
+
 ## Overview
 
 This repository contains three scripts for processing GRIB files, especially designed for ERA5 data, but works with other data also. ERA5 is a global atmospheric reanalysis dataset produced by the European Centre for Medium-Range Weather Forecasts (ECMWF). The scripts are tailored for extracting and analyzing meteorological variables from GRIB files.
